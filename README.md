@@ -17,6 +17,21 @@ $ docker run -p 41061:22 -p 41062:80 -d -v ~/reporte:/www tomsik68/xampp
 -- /$home/reporte ruta local a montar
 ```
 
+### Si tuvieras un bug de TLS
+lista de las maquinas
+```
+$ docker-machine ls
+```
+te crea una maquina virtual con docker2boot 
+```
+$ docker-machine create -d virtual box MI_MAKINA
+```
+selecciona “MI_MAKINA” como ambiente de trabajo
+```
+$ eval "$(docker-machine env MI_MAKINA)” 
+```
+con “docker-machine ls” te fijas si está seleccionada, te debe aparecer un asterisco al lado de la maquina de trabajo
+
 Access ssh
 ```
 $ ssh root@192.168.99.100 -p 22
